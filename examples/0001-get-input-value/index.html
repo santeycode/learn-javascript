@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Получить значение input</title>
+    <link rel="stylesheet" href="/bootstrap/css/bootstrap.css">
+</head>
+</body>
+
+<h1 class="text-center">Получить значение input</h1>
+
+<div class="row-fluid">
+    <div class="col-md-6">
+        <h3>Пример</h3>
+        <div class="well">
+            <div class="form-group">
+                <input id="input" class="form-control" placeholder="Введите значение">
+            </div>
+            <div class="form-group">
+                <button id="button" class="btn btn-primary">Получить значение</button>
+            </div>
+            <pre id="result"></pre>
+        </div>
+        <script>
+            var inputEl = document.getElementById('input');
+            var buttonEl = document.getElementById('button');
+            var resultEl = document.getElementById('result');
+            buttonEl.onclick = function() {
+                resultEl.innerHTML = inputEl.value;
+            };
+        </script>
+    </div>
+    <div class="col-md-6">
+        <h3>HTML</h3>
+        <pre>&lt;input id="input" placeholder="Введите значение"&gt;
+&lt;button id="button"&gt;Получить значение&lt;/button&gt;
+&lt;pre id="result"&gt;&lt;/pre&gt;</pre>
+        <h3>JavaScript</h3>
+        <pre>var inputEl = document.getElementById('input');
+var buttonEl = document.getElementById('button');
+var resultEl = document.getElementById('result');
+buttonEl.onclick = function() {
+    resultEl.innerHTML = inputEl.value;
+};</pre>
+    </div>
+</div>
+
+</body>
+</html>

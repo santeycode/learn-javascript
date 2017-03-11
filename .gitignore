@@ -1,0 +1,12 @@
+node_modules
+nbproject
+tmp
+Desktop.ini
+.idea
+.project
+.settings
+.DS_Store
+*.diff
+*.patch
+*.log
+*~
