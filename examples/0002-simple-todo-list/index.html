@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Простой список задач</title>
+    <link rel="stylesheet" href="/bootstrap/css/bootstrap.css">
+</head>
+</body>
+
+<h1 class="text-center">Добавление задач в список</h1>
+
+<div class="row-fluid">
+    <div class="col-md-6">
+        <h3>Пример</h3>
+        <div class="well">
+            <h1>Список задач</h1>
+            <ul class="list-group" id="list"></ul>
+            <div class="form-group">
+                <input type="text" class="form-control" id="inputTask" placeholder="Название задачи">
+            </div>
+            <button class="btn btn-success" id="addTask">Добавить задачу</button>
+        </div>
+        <script>
+            var list = document.getElementById('list');
+            var input = document.getElementById('inputTask');
+            var button = document.getElementById('addTask');
+            function addTask() {
+                if (input.value !== '') {
+                    list.innerHTML += '<li class="list-group-item">' + input.value + '</li>';
+                    input.value = '';
+                }
+            }
+            button.onclick = addTask;
+        </script>
+    </div>
+    <div class="col-md-6">
+        <h3>HTML</h3>
+        <pre>&lt;h1&gt;Список задач&lt;/h1&gt;
+&lt;ul id="list"&gt;&lt;/ul&gt;
+&lt;input type="text" id="inputTask" placeholder="Название задачи"&gt;
+&lt;button id="addTask"&gt;Добавить задачу&lt;/button&gt;</pre>
+        <h3>JavaScript</h3>
+        <pre>var list = document.getElementById('list');
+var input = document.getElementById('inputTask');
+var button = document.getElementById('addTask');
+function addTask() {
+    if (input.value !== '') {
+        list.innerHTML += '&lt;li class="list-group-item"&gt;' + input.value + '&lt;/li&gt;';
+        input.value = '';
+    }
+}
+button.onclick = addTask;</pre>
+    </div>
+</div>
+
+</body>
+</html>
