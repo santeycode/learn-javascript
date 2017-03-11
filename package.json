@@ -2,9 +2,9 @@
   "name": "learn-javascript",
   "version": "1.0.0",
   "description": "javascript examples and practical exercises",
-  "main": "index.js",
+  "main": "server.js",
   "scripts": {
-    "start": "node examples",
+    "start": "node server",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
