@@ -7,6 +7,9 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Простой список задач</title>
     <link rel="stylesheet" href="/bootstrap/css/bootstrap.css">
+    <script src="/ace/ace.js"></script>
+    <script src="/ace/mode-javascript.js"></script>
+    <script src="/ace/mode-html.js"></script>
 </head>
 </body>
 
@@ -38,12 +41,12 @@
     </div>
     <div class="col-md-6">
         <h3>HTML</h3>
-        <pre>&lt;h1&gt;Список задач&lt;/h1&gt;
+        <div id="htmlCode">&lt;h1&gt;Список задач&lt;/h1&gt;
 &lt;ul id="list"&gt;&lt;/ul&gt;
 &lt;input type="text" id="inputTask" placeholder="Название задачи"&gt;
-&lt;button id="addTask"&gt;Добавить задачу&lt;/button&gt;</pre>
+&lt;button id="addTask"&gt;Добавить задачу&lt;/button&gt;</div>
         <h3>JavaScript</h3>
-        <pre>var list = document.getElementById('list');
+        <div id="jsCode">var list = document.getElementById('list');
 var input = document.getElementById('inputTask');
 var button = document.getElementById('addTask');
 function addTask() {
@@ -52,9 +55,22 @@ function addTask() {
         input.value = '';
     }
 }
-button.onclick = addTask;</pre>
+button.onclick = addTask;</div>
     </div>
 </div>
-
+<script>
+    var options = {
+        readOnly: true,
+        maxLines: Infinity,
+        fontSize: '14px',
+        wrap: true
+    };
+    var html = ace.edit("htmlCode");
+    html.setOptions(options);
+    html.session.setMode('ace/mode/html');
+    var js = ace.edit("jsCode");
+    js.setOptions(options);
+    js.session.setMode('ace/mode/javascript');
+</script>
 </body>
 </html>

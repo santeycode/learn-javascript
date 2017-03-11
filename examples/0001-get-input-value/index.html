@@ -7,6 +7,9 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Получить значение input</title>
     <link rel="stylesheet" href="/bootstrap/css/bootstrap.css">
+    <script src="/ace/ace.js"></script>
+    <script src="/ace/mode-javascript.js"></script>
+    <script src="/ace/mode-html.js"></script>
 </head>
 </body>
 
@@ -35,18 +38,31 @@
     </div>
     <div class="col-md-6">
         <h3>HTML</h3>
-        <pre>&lt;input id="input" placeholder="Введите значение"&gt;
+        <div id="htmlCode">&lt;input id="input" placeholder="Введите значение"&gt;
 &lt;button id="button"&gt;Получить значение&lt;/button&gt;
-&lt;pre id="result"&gt;&lt;/pre&gt;</pre>
+&lt;pre id="result"&gt;&lt;/pre&gt;</div>
         <h3>JavaScript</h3>
-        <pre>var inputEl = document.getElementById('input');
+        <div id="jsCode">var inputEl = document.getElementById('input');
 var buttonEl = document.getElementById('button');
 var resultEl = document.getElementById('result');
 buttonEl.onclick = function() {
     resultEl.innerHTML = inputEl.value;
-};</pre>
+};</div>
     </div>
 </div>
-
+<script>
+    var options = {
+        readOnly: true,
+        maxLines: Infinity,
+        fontSize: '14px',
+        wrap: true
+    };
+    var html = ace.edit("htmlCode");
+    html.setOptions(options);
+    html.session.setMode('ace/mode/html');
+    var js = ace.edit("jsCode");
+    js.setOptions(options);
+    js.session.setMode('ace/mode/javascript');
+</script>
 </body>
 </html>

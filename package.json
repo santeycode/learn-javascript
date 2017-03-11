@@ -26,6 +26,7 @@
   },
   "homepage": "https://github.com/santeycode/learn-javascript#readme",
   "dependencies": {
+    "ace-builds": "^1.2.6",
     "bootstrap": "^3.3.7",
     "express": "^4.15.2",
     "serve-index": "^1.8.0"
